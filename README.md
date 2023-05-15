@@ -39,5 +39,5 @@ Este projeto é distribuído sob a licença MIT. Veja o arquivo LICENSE para mai
 
 ### Créditos ###
 
-[Professor Fernando Anselmo](https://www.youtube.com/@FernandoAnselmo)
-[Repositorio com seu livro](https://github.com/fernandoans/publicacoes)
+* [Professor Fernando Anselmo](https://www.youtube.com/@FernandoAnselmo)
+* [Repositorio com seu livro](https://github.com/fernandoans/publicacoes)
