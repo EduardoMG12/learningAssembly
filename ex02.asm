@@ -1,21 +1,21 @@
-section .data
-    msg: db 'Hello World!', 0xA
-    tam equ $- msg
-section .text
+section .data ;secao memoria antes do programa executar HEAP
+    msg db 'Hello World!', 0xA; msg virara um ponteiro na memoria de db | db tipo de dado, define byte
+    tam equ $- msg ;tam variavel tamanho| equ equal  | $- operador comprimento em bytes do valor alocado na memoria do endereco citado
+section .text; pilha de funcoes executadas
 
 ;ponto de entrada
-global _start
+global _start;global chama a funcao inicial
 
 _start:
-    mov eax, 0x4 
-    mov ebx, 0x1
-    mov ecx, msg
-    mov edx, tam
+    mov eax, 0x4;mov minemonico=endereco que leva para um registrador | eax armazena um valor de cada vez| acumulador register | 0x4 standard transfer data kernel:diretamente ligado com S.O|meio q um import do sistema de transferencia de dados
+    mov ebx, 0x1;base    register = meio que uma funcao do sistema de transferencia de dados que seria o print
+    mov ecx, msg;counter register = definindo o output
+    mov edx, tam;data    register 
 
-    int 0x80 ; executa tudo atrás
-
-    mov eax, 0x1
-    mov ebx, 0x0
+    int 0x80 ; executa tudo atrás | chamada da kernel para executar codigo acima tambem funciona o "syscall"
+    
+    mov eax, 0x1 ; lib para finalizar program
+    mov ebx, 0x0; registrador dentro da lib acima para finalizar programa com sucesso
     int 0x80 ; executa tudo atrás
 
 
